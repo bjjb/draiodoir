@@ -1,0 +1,68 @@
+/**
+ * Example account signup form.
+ */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-width: 620px;
+}
+form {
+  display: block;
+  width: 500px;
+  padding: 50px;
+  margin: auto;
+
+  background-color: #ccddaa;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,235,0.9)), to(rgba(20,20,20,0.0)));
+  background-image: -moz-linear-gradient(90deg, rgba(255,255,235,0.9), rgba(20,20,0,0.0));
+
+  border: 5px solid #889966;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 1em;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px #112200;
+  -moz-box-shadow: 0 0 0.5em #112200;
+  -o-box-shadow: 0 0 5px #112200;
+  box-shadow: 0 0 5px #112200;
+}
+
+input {
+  display: inline-block;
+  font-size: 20px;
+  height: 40px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+label {
+  display: inline-block;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+}
+legend {
+  display: block;
+  padding: 5px;
+  border: 5px solid #889966;
+  border: 5px solid #889966;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 1em;
+  border-radius: 10px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  color: #334400;
+  text-shadow: 0px 0px 4px #999999;
+  top: -77px;
+  background-color: #ccddaa;
+}

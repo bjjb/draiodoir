@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>New Account</title>
+    <script type="text/javascript" src="../draiodoir.js"></script>
+    <link rel="stylesheet" type="text/css" href="account_wizard.css">
+  </head>
+  <body>
+    <h1>New Account</h1>
+    <form id="new_account" name="account" method="POST"
+          action="http://example.com/accounts"
+          enctype="application/x-www-form-urlencoded" onload="new Wizard(this);">
+
+      <!-- The fields here are required, so the submit button does nothing
+            (except retrigger validation) until validation passes. -->
+      <fieldset name="personal">
+        <legend>Personal Details</legend>
+
+        <label for="account_name">Name</label>
+        <input type="text" id="account_name" name="account[name]"
+                placeholder="Your full name" required="required" />
+
+        <label for="account_dob">Date of Birth</label>
+        <input type="date" id="account_dob" name="account[dob]"
+                placeholder="YYYY-mm-dd" required="required"
+                min="1800-01-01" max="1990-12-12" />
+      </fieldset>
+
+      <!-- Everything in this fieldset is optional. It will be shown, but the
+            submit button should be enabled already. -->
+      <fieldset name="tastes">
+        <label for="account_favourite_film">Your favourite film</label>
+        <select id="account_favourite_film" name="account[favourite_film]">
+          <option value="1">Fight Club</option>
+          <option value="2">True Romance</option>
+        </select>
+
+        <label for="account_favourite_music">Your favourite music</label>
+        <select id="account_favourite_music" name="account[favourite_music]">
+          <option value="1">Skip James</option>
+          <option value="2">Pond</option>
+          <option value="3">Antonio Vivaldi</option>
+        </select>
+      </fieldset>
+
+      <!-- This is the last step, so it should trigger the submit! -->
+      <fieldset name='plan'>
+        <legend>Select your plan</legend>
+        <select id="account_plan" name="account[plan]" required='required'>
+          <option value="1">Bronze</option>
+          <option value="2">Silver</option>
+          <option value="3">Gold</option>
+        </select>
+      </fieldset>
+      <input type='submit' value="Sign me up!" />
+    </form>
+  </body>
+</html>
