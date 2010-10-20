@@ -79,7 +79,9 @@ function Wizard(form, options) {
 
   function showStep(index) {
     // TODO - set the label
-    steps[index].show();
+    if (steps[index]) {
+      steps[index].show();
+    }
   };
   showStep(0);
 
