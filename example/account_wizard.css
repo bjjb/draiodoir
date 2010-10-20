@@ -26,28 +26,38 @@ form {
   box-shadow: 0 0 5px #112200;
 }
 
-input {
-  display: inline-block;
-  font-size: 20px;
-  height: 40px;
+label {
+  float: left;
+  height: 2em;
+  line-height: 2em;
+  width: 150px;
+  text-align: right;
+}
+
+input,select {
+  margin-left: 170px;
+  display: block;
+  clear: right;
   padding: 5px;
   font-weight: bold;
 }
 
-label {
-  display: inline-block;
-  line-height: 20px;
-  vertical-align: middle;
+input:invalid,select:invalid {
+  color: red;
+  -webkit-box-shadow: inset 1px 1px 7px red;
+  -moz-box-shadow: inset 0 0 7px red;
+  box-shadow: inset 0 0 7px red;
 }
 
 fieldset {
   border: none;
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
   display: block;
+}
+fieldset[hidden] {
+  display: none;
 }
 legend {
   display: block;

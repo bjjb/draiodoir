@@ -1,14 +1,29 @@
 <html>
   <head>
     <title>New Account</title>
+    <script type="text/javascript" src="validator.js"></script>
     <script type="text/javascript" src="../draiodoir.js"></script>
+    <script type="text/javascript">
+      addEventListener('load', function(event) {
+        var form = document.getElementById('new_account');
+        new Validator(form);
+        new Wizard(form, {
+          labels: {
+            next: {
+              personal: "That's me...",
+              tastes: "That all I'm telling you."
+            }
+          }
+        });
+      }, false);
+    </script>
     <link rel="stylesheet" type="text/css" href="account_wizard.css">
   </head>
   <body>
     <h1>New Account</h1>
     <form id="new_account" name="account" method="POST"
-          action="http://example.com/accounts"
-          enctype="application/x-www-form-urlencoded" onload="new Wizard(this);">
+          action="javascript:alert('Submitting form!');"
+          enctype="application/x-www-form-urlencoded">
 
       <!-- The fields here are required, so the submit button does nothing
             (except retrigger validation) until validation passes. -->
@@ -18,11 +33,11 @@
         <label for="account_name">Name</label>
         <input type="text" id="account_name" name="account[name]"
                 placeholder="Your full name" required="required" />
-
+        <br />
         <label for="account_dob">Date of Birth</label>
         <input type="date" id="account_dob" name="account[dob]"
                 placeholder="YYYY-mm-dd" required="required"
-                min="1800-01-01" max="1990-12-12" />
+                min="1900-01-01" max="1990-12-12" />
       </fieldset>
 
       <!-- Everything in this fieldset is optional. It will be shown, but the
@@ -30,12 +45,14 @@
       <fieldset name="tastes">
         <label for="account_favourite_film">Your favourite film</label>
         <select id="account_favourite_film" name="account[favourite_film]">
+          <option value="">Pick one...</option>
           <option value="1">Fight Club</option>
           <option value="2">True Romance</option>
         </select>
 
         <label for="account_favourite_music">Your favourite music</label>
         <select id="account_favourite_music" name="account[favourite_music]">
+          <option value="">Select from...</option>
           <option value="1">Skip James</option>
           <option value="2">Pond</option>
           <option value="3">Antonio Vivaldi</option>
@@ -46,12 +63,13 @@
       <fieldset name='plan'>
         <legend>Select your plan</legend>
         <select id="account_plan" name="account[plan]" required='required'>
+          <option value="">Please Choose...</option>
           <option value="1">Bronze</option>
           <option value="2">Silver</option>
           <option value="3">Gold</option>
         </select>
       </fieldset>
-      <input type='submit' value="Sign me up!" />
+      <input type='submit' value="Continue" />
     </form>
   </body>
 </html>
