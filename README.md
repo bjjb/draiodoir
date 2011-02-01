@@ -7,10 +7,38 @@ A javascript that turns web-pages into Wizards.
 Usage
 -----
 
-  - Include (in a <script> tag) on your *HTML5* page
+  - Include (in a `<script>` tag) on your *HTML5* page
   - Make the form a Wizard, with `new Wizard("my_form");`
 
-See [the Wiki][wiki] for more examples
+Example
+-------
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta content-type='UTF-8'>
+        <script type='text/javascript' src='wizard.js'></src>
+        <script>
+          addEventListener('load', function(e) {
+            new Wizard('my_form');
+          }, false);
+        </script>
+        <title>Draíodóir Test</title>
+      </head>
+      <body>
+        <form id='my_form' action='javascript:alert("Submitting form");'>
+          <fieldset>
+            <label for='name'>Name</label>
+            <input id='name' type='text' required>
+          </fieldset>
+          <fieldset>
+            <label for='age'>Age</label>
+            <input id='age' type='number' minimum='18' maximum='80' required>
+          </fieldset>
+          <input type='submit' value='Go'>
+        </form>
+      </body>
+    </html>
 
 Caveats
 -------
@@ -36,7 +64,6 @@ This software is released under the [GPL][gpl], so feel free to steal and
 destroy - just comply with the terms of that license. I accept no
 responsibilty for anything.
 
-[wiki]: https://github.com/jjbuckley/draiodoir/wiki
 [validation]: http://www.w3.org/TR/html5/association-of-controls-and-forms.html#constraints
 [bailitheoir]: http://jjbuckley.github.com/bailitheoir
 [firefox]: http://www.mozilla.com/firefox
