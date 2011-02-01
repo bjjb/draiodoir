@@ -69,6 +69,6 @@ responsibilty for anything.
 [firefox]: http://www.mozilla.com/firefox
 [chrome]: http://www.google.com/chrome
 [safari]: http://www.apple.com/safari
-[ie]: http://www.microsoft.com/internet_explorer
+[ie]: http://www.microsoft.com/ie
 [w3c]: http://www.w3.org
 [gpl]: http://www.gnu.org/licenses/gpl.html
