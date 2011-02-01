@@ -8,34 +8,37 @@ Usage
 -----
 
   - Include (in a <script> tag) on your *HTML5* page
-  - Make the form a Wizard. For example
-      
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta content-type='UTF-8'>
-          <script type='text/javascript' src='wizard.js'></src>
-          <script>
-            addEventListener('load', function(e) {
-              new Wizard('my_form');
-            }, false);
-          </script>
-          <title>Draíodóir Test</title>
-        </head>
-        <body>
-          <form id='my_form' action='javascript:alert("Submitting form");'>
-            <fieldset>
-              <label for='name'>Name</label>
-              <input id='name' type='text' required>
-            </fieldset>
-            <fieldset>
-              <label for='age'>Age</label>
-              <input id='age' type='number' minimum='18' maximum='80' required>
-            </fieldset>
-            <input type='submit' value='Go'>
-          </form>
-        </body>
-      </html>
+  - Make the form a Wizard, with `new Wizard("my_form");`
+
+Example
+-------
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta content-type='UTF-8'>
+        <script type='text/javascript' src='wizard.js'></src>
+        <script>
+          addEventListener('load', function(e) {
+            new Wizard('my_form');
+          }, false);
+        </script>
+        <title>Draíodóir Test</title>
+      </head>
+      <body>
+        <form id='my_form' action='javascript:alert("Submitting form");'>
+          <fieldset>
+            <label for='name'>Name</label>
+            <input id='name' type='text' required>
+          </fieldset>
+          <fieldset>
+            <label for='age'>Age</label>
+            <input id='age' type='number' minimum='18' maximum='80' required>
+          </fieldset>
+          <input type='submit' value='Go'>
+        </form>
+      </body>
+    </html>
 
 Caveats
 -------
